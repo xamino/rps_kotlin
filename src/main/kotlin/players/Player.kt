@@ -13,6 +13,11 @@ abstract class Player {
 	private val recordMap = HashMap<GameResult, Int>()
 
 	/**
+	 * Retrieve the name of this player.
+	 */
+	abstract fun name(): String
+
+	/**
 	 * Implementation of the player playing a game of rock paper scissors.
 	 */
 	abstract fun play(): Moves

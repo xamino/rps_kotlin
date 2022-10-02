@@ -8,6 +8,8 @@ import kotlin.random.Random
  * Player that randomly picks a move to play.
  */
 class RandomPlayer : Player() {
+	override fun name(): String = "Random"
+
 	override fun play(): Moves {
 		return Moves.values()[Random.nextInt(Moves.values().size)]
 	}
