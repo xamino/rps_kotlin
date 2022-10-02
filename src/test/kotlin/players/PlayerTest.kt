@@ -4,6 +4,8 @@ import core.GameResult
 import core.Moves
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.Timeout
+import players.impl.RandomPlayer
 import players.impl.StaticPlayer
 
 internal class PlayerTest {
@@ -18,6 +20,23 @@ internal class PlayerTest {
 
 		for (x in 1..10) {
 			assertEquals(Moves.PAPER, staticPlayer.play(), "Static player always plays same move")
+		}
+	}
+
+	/**
+	 * Test the random player, which is difficult because it is random. Thus, play game until we get
+	 * any different result to ensure it is as non-static as possible. We fully expect this to
+	 * return rapidly, but just to prevent it from playing longer than we want, we limit it to 100ms.
+	 */
+	@Test
+	@Timeout(100)
+	fun playRandom() {
+		val randomPlayer = RandomPlayer()
+
+		val firstMove = randomPlayer.play();
+		while (true) {
+			if (randomPlayer.play() != firstMove)
+				break
 		}
 	}
 
