@@ -11,6 +11,18 @@ import players.impl.StaticPlayer
 internal class PlayerTest {
 
 	/**
+	 * Ensure both players have a non-empty name implemented.
+	 */
+	@Test
+	fun name() {
+		val staticPlayer = StaticPlayer(Moves.PAPER)
+		assert(staticPlayer.name().isNotEmpty())
+
+		val randomPlayer = RandomPlayer()
+		assert(randomPlayer.name().isNotEmpty())
+	}
+
+	/**
 	 * Ensure the [StaticPlayer] plays the same move on subsequent calls. Very close to
 	 * assert(true, true), but... you never know.
 	 */

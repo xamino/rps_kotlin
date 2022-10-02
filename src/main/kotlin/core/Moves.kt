@@ -14,7 +14,7 @@ enum class Moves(private val beats: Int) {
 	 */
 	fun compare(move: Moves): GameResult {
 		if (this == move)
-			return GameResult.TIE
+			return GameResult.DRAW
 		return if (move == values()[this.beats]) {
 			GameResult.WIN
 		} else {

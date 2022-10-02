@@ -20,9 +20,9 @@ class Game {
 				a.record(GameResult.LOSE)
 				b.record(GameResult.WIN)
 			}
-			GameResult.TIE -> {
-				a.record(GameResult.TIE)
-				b.record(GameResult.TIE)
+			GameResult.DRAW -> {
+				a.record(GameResult.DRAW)
+				b.record(GameResult.DRAW)
 			}
 		}
 	}

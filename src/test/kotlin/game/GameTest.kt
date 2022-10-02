@@ -37,8 +37,8 @@ internal class GameTest {
 		verify(oneMockPlayer).play()
 		verify(twoMockPlayer).play()
 
-		verify(oneMockPlayer).record(eq(GameResult.TIE))
-		verify(twoMockPlayer).record(eq(GameResult.TIE))
+		verify(oneMockPlayer).record(eq(GameResult.DRAW))
+		verify(twoMockPlayer).record(eq(GameResult.DRAW))
 	}
 
 	@Test

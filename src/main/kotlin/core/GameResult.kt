@@ -6,5 +6,5 @@ package core
 enum class GameResult {
 	WIN,
 	LOSE,
-	TIE
+	DRAW
 }
