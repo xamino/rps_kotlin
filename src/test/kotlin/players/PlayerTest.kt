@@ -45,7 +45,7 @@ internal class PlayerTest {
 	fun playRandom() {
 		val randomPlayer = RandomPlayer()
 
-		val firstMove = randomPlayer.play();
+		val firstMove = randomPlayer.play()
 		while (true) {
 			if (randomPlayer.play() != firstMove)
 				break
