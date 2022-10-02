@@ -20,7 +20,15 @@ abstract class Player {
 	/**
 	 * Stores the result of a single game.
 	 */
-	fun record(result: GameResult) {
+	open fun record(result: GameResult) {
 		recordMap[result] = recordMap.getOrDefault(result, 0) + 1
+	}
+
+	/**
+	 * Retrieves the total number of game results of the specified type. Defaults to zero if none
+	 * played.
+	 */
+	open fun getRecordOf(result: GameResult): Int {
+		return recordMap.getOrDefault(result, 0)
 	}
 }
